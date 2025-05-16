@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+    <head> </head>
+    <body>
+        <nav class="navbar">
+            <div class="container">
+                <div class="nav-group">
+                    <a href="index.html" class="logo-brand">
+                        <img src="../assets/Logo.png" alt="Logo" width="40" />
+                        <span>NFTWorld</span>
+                    </a>
+                    <div class="nav-links">
+                        <a href="create.html">Create</a>
+                        <div class="nav-dropdown">
+                            <a href="explore.html" class="dropbtn">Explore</a>
+                            <div class="nav-dropdown-content">
+                                <a href="nfts.html">
+                                    <i class="bi bi-patch-check-fill me-2"></i>
+                                    NFTs
+                                </a>
+                                <a href="users.html">
+                                    <i class="bi bi-person-fill me-2"></i>
+                                    Users
+                                </a>
+                            </div>
+                        </div>
+                        <a href="account.html">Sell</a>
+                        <a href="marketplace.html">Marketplaces</a>
+                    </div>
+                </div>
+                <div class="navbar-right">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for NFTS, collections, users." class="form-control" />
+                        <i class="bi bi-search"></i>
+                    </div>
+
+                    <!-- Thêm cart icon vào đây -->
+                    <div class="cart-icon">
+                        <i class="bi bi-cart3"></i>
+                        <span class="cart-badge">0</span>
+                        <div class="cart-dropdown">
+                            <div class="cart-header">
+                                <h6>Your Cart</h6>
+                                <button class="clear-cart">Clear All</button>
+                            </div>
+                            <div class="cart-list">
+                                <!-- Cart items will be dynamically added here -->
+                                <div class="no-items">Your cart is empty</div>
+                            </div>
+                            <div class="cart-footer">
+                                <div class="cart-total">
+                                    <span>Total:</span>
+                                    <span class="total-amount">0 TIA</span>
+                                </div>
+                                <button class="btn btn-primary checkout-btn">Checkout</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Thêm notification bell -->
+                    <div class="notification-bell">
+                        <i class="bi bi-bell"></i>
+                        <span class="notification-badge">2</span>
+                        <div class="notification-dropdown">
+                            <div class="notification-header">
+                                <h6>Notifications</h6>
+                                <button class="mark-all-read">Mark all as read</button>
+                            </div>
+                            <div class="notification-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="bi bi-coin"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Your NFT "Small Unit" has been listed</p>
+                                        <span class="notification-time">2 minutes ago</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="bi bi-wallet2"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>Successfully connected to wallet</p>
+                                        <span class="notification-time">1 hour ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="walletSection">
+                        <button id="connectWalletBtn" class="btn btn-outline-success connect-btn" type="button" onclick="window.location.href='../html/login.html';">
+                            Connect wallet
+                        </button>
+
+                        <div id="walletInfo" class="dropdown" style="display: none;">
+                            <div class="wallet-dropdown" data-bs-toggle="dropdown">
+                                <img src="../assets/user.png" alt="Wallet Avatar" class="wallet-avatar" />
+                                <span id="navbarUsername">0x0000...0000</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="../html/account.html">
+                                    <i class="fas fa-user"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="tos.html" target="_blank">
+                                    <i class="fas fa-question-circle"></i>
+                                    Help Center & Documentation
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="toggleChatAssistant()">
+                                    <i class="fas fa-robot"></i>
+                                    AI Assistant
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <div class="network-item">
+                                    Network
+                                    <span>Forma</span>
+                                </div>
+                                <div class="theme-item">
+                                    Theme
+                                    <div class="theme-options">
+                                        <button class="theme-btn active">Light</button>
+                                        <button class="theme-btn">Dark</button>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" onclick="disconnectWallet()">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Sign Out
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </body>
+</html>

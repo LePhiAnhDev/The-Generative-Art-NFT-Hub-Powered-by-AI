@@ -1,0 +1,1095 @@
+/*
+===============================
+=         RESET / BASE        =
+===============================
+*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*
+                  ===============================
+                  =          NAVBAR             =
+                  ===============================
+                  */
+
+.main-content {
+  padding: 2rem;
+}
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.nft-item {
+  width: 100%;
+  position: relative;
+  border-radius: 16px;
+  background: white;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+}
+
+.nft-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.nft-card {
+  background: white;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  height: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.nft-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, 
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.nft-item:hover .nft-card {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.nft-item:hover .nft-card::after {
+  opacity: 1;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.price-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.eth-price {
+  font-weight: 600;
+  color: #333;
+}
+
+.usd-price {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.card-footer {
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+/* Connect Button */
+.connect-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* Wallet Info */
+#walletInfo .dropdown-toggle {
+  font-size: 14px;
+}
+
+#walletInfo .dropdown-menu {
+  min-width: 240px;
+  padding: 8px;
+}
+
+#walletInfo .dropdown-item {
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#walletInfo .dropdown-item i {
+  color: #666;
+}
+
+#walletInfo .dropdown-divider {
+  margin: 8px 0;
+}
+
+/* Theme Buttons */
+.btn-light,
+.btn-dark {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* Loading Animation */
+@keyframes loading {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f3f3f3;
+  border-top: 2px solid #3498db;
+  border-radius: 50%;
+  animation: loading 1s linear infinite;
+  margin-right: 8px;
+}
+
+/*
+      ===============================
+      =         CAROUSEL            =
+      ===============================
+      */
+.carousel {
+  position: relative;
+  margin: 40px 60px 60px;
+  border-radius: 24px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+  max-width: 100%;
+  background: #000;
+  height: 600px;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-item.active {
+  display: flex;
+}
+
+.carousel-item-next:not(.carousel-item-start) {
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.carousel-item-prev:not(.carousel-item-end) {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+/* NFT content */
+.carousel-nft {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  padding: 0 60px;
+  gap: 40px;
+}
+
+/* NFT Image */
+.carousel-item img {
+  width: 480px;
+  height: 480px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+/* Background blur */
+.carousel-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(20px) brightness(0.3);
+  z-index: 0;
+}
+
+.carousel-item.active .carousel-background {
+  opacity: 1;
+}
+
+.carousel-item:not(.active) .carousel-background {
+  opacity: 0;
+}
+
+/* Tách riêng style cho NFT cards */
+.nft-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  background: #f8f9fa; /* Màu nền khi đang load */
+}
+
+.nft-image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.nft-item:hover .nft-image img {
+  transform: scale(1.05);
+}
+
+/* Style cho NFT video */
+.nft-image video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Hiệu ứng hover cho video giống như ảnh */
+.nft-item:hover .nft-image video {
+  transform: scale(1.05);
+}
+
+/* Thêm overlay khi hover để video không quá chói */
+.nft-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);
+  transition: background 0.3s ease;
+  pointer-events: none;
+  border-radius: 16px 16px 0 0;
+}
+
+.nft-item:hover .nft-image::after {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* NFT Info Container */
+.nft-info {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 8px;
+}
+
+/* Created by section */
+.nft-creator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+}
+
+.creator-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.creator-info:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.creator-info img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+.creator-name {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.creator-name i {
+  color: #1DA1F2;
+  font-size: 14px;
+}
+
+.network-info {
+  color: rgba(255,255,255,0.7);
+  margin-left: 4px;
+}
+
+.network-info span {
+  color: #fff;
+  margin-left: 4px;
+}
+
+/* Title style */
+.nft-title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 8px 0;
+  text-align: left;
+}
+
+/* Network badge */
+.nft-network {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.9);
+  width: fit-content;
+}
+
+.nft-network i {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* Description */
+.nft-description {
+  color: rgba(255,255,255,0.7);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 12px 0;
+  max-width: 450px;
+  text-align: left;
+}
+
+/* Stats section */
+.nft-stats {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30px;
+  margin-top: 16px;
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(255,255,255,0.6);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+}
+
+/* Responsive */
+@media (max-width: 1600px) {
+  .carousel {
+      margin: 30px 60px;
+  }
+}
+
+@media (max-width: 1400px) {
+  .carousel-item {
+      height: 500px;
+  }
+  
+  .nft-image-container,
+  .carousel-item img {
+      width: 480px;
+      height: 480px;
+  }
+  
+  .nft-info {
+      padding-left: 40px;
+  }
+  
+  .nft-title {
+      font-size: 42px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .carousel-item {
+      height: 450px;
+  }
+  
+  .nft-image-container,
+  .carousel-item img {
+      width: 400px;
+      height: 400px;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-item {
+      height: auto;
+      padding: 30px 0;
+  }
+  
+  .carousel-nft {
+      flex-direction: column;
+      text-align: center;
+  }
+  
+  .nft-info {
+      padding-left: 0;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .nft-description {
+      text-align: left;
+  }
+}
+
+/*
+===============================
+=       USERS SECTION     =
+===============================
+*/
+
+.top-artists,
+.cards-section {
+    padding: 40px 0;
+    background-color: #ffffff;
+    margin: 40px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.cards-section {
+    padding-bottom: 20px;
+}
+
+.section-header {
+    padding: 0 0 20px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 30px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.section-header h2,
+.cards-section .section-header h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #04111d;
+    margin: 0;
+}
+
+/* Artists Grid */
+.artists-grid {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.artist-card {
+  background: white;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.artist-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent 0%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, transparent 100%);
+  background-size: 200% 100%;
+  transition: all 0.4s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.artist-card:hover::after {
+  background-position: 100% 0;
+}
+
+.artist-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.artist-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover .artist-avatar {
+  transform: scale(1.08) rotate(3deg);
+}
+
+.artist-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.artist-name h3 {
+  font-size: 20px;
+  margin: 0;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.artist-verified-badge {
+  color: #0d6efd;
+  font-size: 18px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.artist-card:hover .artist-verified-badge {
+  transform: scale(1.2);
+  color: #1da1f2;
+}
+
+/* Xóa bỏ các style không cần thiết */
+.artist-stats,
+.floor,
+.volume {
+  display: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .artist-avatar {
+      width: 60px;
+      height: 60px;
+  }
+
+  .artist-name h3 {
+      font-size: 16px;
+  }
+}
+
+/*
+      ===============================
+      =       NFT CARDS SECTION     =
+      ===============================
+      */
+.cards-section .section-header {
+  padding: 0 0 20px 0;
+  margin-bottom: 30px;
+}
+
+.cards-section .section-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* NFT Grid */
+.nft-grid {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+  width: 100%;
+}
+
+.nft-details {
+  padding: 12px;
+  background: white;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.nft-item:hover .nft-details {
+  transform: translateY(-2px);
+}
+
+.collection-name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.collection-name h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
+}
+
+.verified-badge {
+  color: #0d6efd;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.nft-item:hover .verified-badge {
+  filter: drop-shadow(0 0 2px rgba(29, 161, 242, 0.3));
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-row .label {
+  font-size: 13px;
+  color: #707a83;
+}
+
+.price-row .value {
+  font-size: 14px;
+  color: #000;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+  .nft-grid {
+      grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1200px) {
+  .nft-grid {
+      grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .nft-grid {
+      grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .nft-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .nft-grid {
+      grid-template-columns: 1fr;
+  }
+}
+
+/*
+                  ===============================
+                  =         MEDIA QUERIES       =
+                  ===============================
+                  */
+@media (max-width: 992px) {
+  .search-container {
+      width: auto;
+  }
+
+  .input-search {
+      width: 200px;
+  }
+}
+
+.loading-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.loading-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  text-align: center;
+}
+
+.loading-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.loading-steps {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.step-status {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-status i {
+  font-size: 18px;
+}
+
+.step-pending {
+  color: #6c757d;
+}
+
+.step-loading {
+  color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+.step-success {
+  color: #28a745;
+}
+
+.step-text {
+  flex: 1;
+  font-size: 14px;
+  color: #333;
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+/* Thêm animation khi chuyển slide */
+.carousel-item.active img {
+  /* Xóa animation: scaleIn */
+}
+
+@keyframes scaleIn {
+  /* Xóa keyframes này */
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .carousel-nft {
+      gap: 30px;
+      padding: 0 30px;
+  }
+  
+  .nft-info {
+      max-width: 450px;
+  }
+}
+
+/* Thêm animation cho nội dung */
+.carousel-nft {
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.carousel-item-next:not(.carousel-item-start) .carousel-nft {
+  transform: translateX(50px);
+}
+
+.carousel-item-prev:not(.carousel-item-end) .carousel-nft {
+  transform: translateX(-50px);
+}
+
+/* Thêm animation cho background blur */
+.carousel-background {
+  transition: all 0.8s ease-out;
+}
+
+.carousel-item.active .carousel-background {
+  opacity: 1;
+}
+
+.carousel-item:not(.active) .carousel-background {
+  opacity: 0;
+}
+
+/* Style cho nút điều hướng carousel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  z-index: 100;
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  left: 0;
+  transform: translateY(-50%) translateX(-22px);
+}
+
+.carousel-control-next {
+  right: 0;
+  transform: translateY(-50%) translateX(22px);
+}
+
+/* Style cho icon mũi tên */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 24px;
+  height: 24px;
+  filter: invert(0.5);
+  z-index: 101;
+  transition: all 0.2s ease;
+}
+
+/* Hiệu ứng hover */
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: #ffffff;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Hiệu ứng active (click) */
+.carousel-control-prev:active,
+.carousel-control-next:active {
+  background: #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-control-prev:active {
+  transform: translateY(-50%) translateX(-22px) scale(0.92);
+}
+
+.carousel-control-next:active {
+  transform: translateY(-50%) translateX(22px) scale(0.92);
+}
+
+/* Animation cho mũi tên */
+@keyframes slideLeftRight {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(-4px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slideRightLeft {
+  0% {
+      transform: translateX(0);
+  }
+  50% {
+      transform: translateX(4px);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+/* Điều chỉnh responsive cho nút điều hướng */
+@media (max-width: 768px) {
+  .section-header {
+      padding: 0 0 15px 0;
+      margin-bottom: 20px;
+  }
+  
+  .section-header h2,
+  .cards-section .section-header h2 {
+      font-size: 22px;
+  }
+  
+  .artists-grid,
+  .nft-grid {
+      padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-nft {
+      padding: 0 20px;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .top-artists,
+    .cards-section {
+        padding: 20px 0;
+        margin: 20px 0;
+    }
+}
+
+.artist-card {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.artist-info {
+    cursor: pointer;
+}

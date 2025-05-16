@@ -1,0 +1,32 @@
+/* 
+  Bạn có thể thêm/bớt/tùy chỉnh style ở đây.
+  Tailwind lo phần utility classes, 
+  file này dành cho những custom style mà bạn muốn thêm.
+*/
+
+/* Ví dụ custom lại kích thước logo */
+.logo {
+    width: 120px;  /* Bạn có thể thay đổi tùy ý */
+    height: auto;  /* Giữ tỷ lệ nếu cần */
+}
+
+/* Ví dụ: thay đổi màu viền khi hover ở các button */
+button:hover {
+    border-color: #999999;  /* Màu viền khi hover */
+}
+
+/* Bạn có thể thêm các style khác tùy theo nhu cầu */
+
+.spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255,255,255,.3);
+    border-radius: 50%;
+    border-top-color: #fff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}

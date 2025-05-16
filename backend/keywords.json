@@ -1,0 +1,120 @@
+{
+    "greetings": [
+      "xin chào", "chào", "hello", "hi", "hey", "xinchao", "CHAO", "HELLO", "HI", "HEY",
+      "chao ban", "chào bạn", "hi there", "hey there", "xin chao ban", "chao ae", "chào ae",
+      "hello everyone", "greetings", "xin kính chào", "xin kinh chao", "goodmorning", "good morning",
+      "morning", "evening", "good evening", "afternoon", "good afternoon", "CHAO BAN", "HI THERE",
+      "xin chao", "chao", "hallo", "hola", "bonjour", "xin", "kinh chao", "kính chào"
+    ],
+    "marketplace": [
+      "marketplace", "market", "mkt", "chợ", "mua bán", "market place", "cho", "mua ban",
+      "sàn giao dịch", "san giao dich", "trading floor", "trading platform", "nft market",
+      "nft marketplace", "nft trading", "sàn nft", "san nft", "chợ nft", "cho nft",
+      "thị trường", "thi truong", "market place nft", "nft exchange", "NFT MARKET", "NFT MKT",
+      "crypto market", "crypto marketplace", "tiệm nft", "tiem nft", "cửa hàng nft", "cua hang nft",
+      "shop nft", "nft shop", "nft store", "MARKETPLACE", "MARKET", "MKT", "CHO", "MUA BAN"
+    ],
+    "search": [
+      "search", "tìm kiếm", "tu khoa", "từ khoá", "find", "lookup", "tim kiem",
+      "tìm", "tim", "tra cứu", "tra cuu", "look up", "search for", "searching",
+      "browse", "browse nft", "explore", "explore nft", "discover", "discover nft",
+      "tìm nft", "tim nft", "search nft", "SEARCH", "TIM KIEM", "FIND", "LOOKUP",
+      "xem", "view", "check", "kiểm tra", "kiem tra", "duyệt", "duyet",
+      "khám phá", "kham pha", "tham khảo", "tham khao", "research", "nghiên cứu", "nghien cuu"
+    ],
+    "price_below": [
+      "giá dưới", "gia duoi", "price below", "under", "dưới", "duoi", "below",
+      "less than", "cheaper than", "lower than", "maximum price", "max price",
+      "không quá", "khong qua", "tối đa", "toi da", "price max", "price maximum",
+      "giá tối đa", "gia toi da", "giá max", "duoi muc", "price below", "GIA DUOI"
+    ],
+    "price_above": [
+      "giá trên", "gia tren", "price above", "over", "trên", "tren", "above",
+      "more than", "higher than", "minimum price", "min price", "từ", "tu",
+      "starting from", "starts from", "price min", "price minimum", "giá tối thiểu",
+      "gia toi thieu", "giá min", "tren muc", "PRICE ABOVE", "GIA TREN"
+    ],
+    "art": [
+      "tạo nghệ thuật", "generate art", "vẽ tranh", "sáng tác nghệ thuật", "tạo ảnh",
+      "create art", "art generation", "tao nghe thuat", "ve tranh", "sang tac nghe thuat",
+      "tao anh", "digital art", "artwork", "art creation", "art generator", "AI art",
+      "nghệ thuật AI", "nghe thuat AI", "vẽ AI", "ve AI", "creative", "sáng tạo",
+      "sang tao", "design", "thiết kế", "thiet ke", "ART", "ARTWORK", "DIGITAL ART",
+      "picture", "image", "drawing", "sketch", "painting", "illustration"
+    ],
+    "nft_search": [
+      "tìm nft", "tim nft", "nft nào", "nft nao", "tìm kiếm nft", "nft về", "nft có",
+      "find nft", "search nft", "nft tim", "nft find", "nft lookup", "nft search",
+      "browse nft", "explore nft", "discover nft", "xem nft", "view nft", "check nft",
+      "kiểm tra nft", "kiem tra nft", "duyệt nft", "duyet nft", "khám phá nft",
+      "kham pha nft", "tham khảo nft", "tham khao nft", "NFT SEARCH", "NFT FIND",
+      "NFT LOOKUP", "NFT BROWSE", "NFT EXPLORE", "NFT DISCOVER"
+    ],
+    "user_info": [
+      "thông tin người dùng", "user info", "profile của", "hồ sơ", "profile", "nguoi dung",
+      "ho so", "thong tin nguoi dung", "user profile", "account info", "account information",
+      "thông tin tài khoản", "thong tin tai khoan", "user details", "chi tiết người dùng",
+      "chi tiet nguoi dung", "user account", "tài khoản", "tai khoan", "account",
+      "USER INFO", "PROFILE", "ACCOUNT", "TAI KHOAN", "HO SO", "thông tin cá nhân",
+      "thong tin ca nhan", "personal info", "user data", "account details"
+    ],
+    "report": [
+      "báo cáo", "bao cao", "report", "thống kê", "thong ke", "số liệu", "statistics",
+      "statistic", "analytics", "phân tích", "phan tich", "analysis", "data", "dữ liệu",
+      "du lieu", "reporting", "performance", "hiệu suất", "hieu suat", "metrics",
+      "chỉ số", "chi so", "dashboard", "bảng điều khiển", "bang dieu khien", "REPORT",
+      "STATISTICS", "ANALYTICS", "DATA", "METRICS", "DASHBOARD"
+    ],
+    "create_nft": [
+      "tạo nft", "create nft", "đăng nft", "upload nft", "đăng tải nft", "nft mới",
+      "nft moi", "tao nft", "dang nft", "dang tai nft", "mint nft", "mint", "tạo mới",
+      "tao moi", "create new", "new nft", "publish nft", "phát hành nft", "phat hanh nft",
+      "list nft", "niêm yết nft", "niem yet nft", "CREATE NFT", "UPLOAD NFT", "MINT NFT",
+      "NEW NFT", "PUBLISH NFT", "LIST NFT"
+    ],
+    "help": [
+      "giúp đỡ", "help", "hướng dẫn", "huong dan", "menu", "các lệnh", "support",
+      "trợ giúp", "tro giup", "giup do", "assistance", "guide", "tutorial", "how to",
+      "cách sử dụng", "cach su dung", "instructions", "docs", "documentation", "manual",
+      "cẩm nang", "cam nang", "HELP", "SUPPORT", "GUIDE", "TUTORIAL", "MANUAL",
+      "FAQ", "questions", "câu hỏi", "cau hoi", "hỏi đáp", "hoi dap"
+    ],
+    "buy": [
+      "mua", "buy", "purchase", "get", "acquire", "order", "MUA", "BUY", "PURCHASE",
+      "mua nft", "buy nft", "purchase nft", "obtain", "collect", "collecting",
+      "acquisition", "buying", "purchasing", "shop", "shopping", "checkout"
+    ],
+    "sell": [
+      "bán", "ban", "sell", "selling", "list for sale", "put on sale", "BAN", "SELL",
+      "bán nft", "ban nft", "sell nft", "listing", "price", "pricing", "đặt giá",
+      "dat gia", "định giá", "dinh gia", "sale", "rao bán", "rao ban"
+    ],
+    "collection": [
+      "collection", "bộ sưu tập", "bo suu tap", "COLLECTION", "BST", "collections",
+      "collectibles", "nft collection", "bst nft", "series", "set", "gallery",
+      "portfolio", "showcase", "display", "exhibit", "exhibition"
+    ],
+    "wallet": [
+      "wallet", "ví", "vi", "crypto wallet", "connect wallet", "wallet connection",
+      "metamask", "kết nối ví", "ket noi vi", "disconnect", "ngắt kết nối",
+      "ngat ket noi", "WALLET", "VI", "CONNECT"
+    ],
+    "transaction": [
+      "transaction", "giao dịch", "giao dich", "tx", "hash", "transfer", "chuyển",
+      "chuyen", "history", "lịch sử", "lich su", "TRANSACTION", "GIAO DICH",
+      "TRANSFER", "HISTORY"
+    ],
+    "filter": [
+      "filter", "lọc", "loc", "sort", "sắp xếp", "sap xep", "order by", "FILTER",
+      "LOC", "SORT", "SAP XEP", "arrange", "organize", "categorize", "category"
+    ],
+    "trending": [
+      "trending", "hot", "popular", "trend", "xu hướng", "xu huong", "thịnh hành",
+      "thinh hanh", "TRENDING", "HOT", "POPULAR", "XU HUONG", "top", "best"
+    ],
+    "notification": [
+      "notification", "thông báo", "thong bao", "alert", "notice", "notify",
+      "announcement", "updates", "cập nhật", "cap nhat", "NOTIFICATION", "THONG BAO",
+      "ALERT"
+    ]
+}

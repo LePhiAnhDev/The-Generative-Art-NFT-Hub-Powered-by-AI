@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    ></script>
+    <title>NFTWorld - Mint Your NFT</title>
+    <link rel="icon" type="image/png" href="../assets/Logo.png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/nft-form.css" />
+    <link rel="stylesheet" href="../css/shared_navbar.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <!-- ================== NAVBAR ================== -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-group">
+          <a href="index.html" class="logo-brand">
+            <img src="../assets/Logo.png" alt="Logo" width="40" />
+            <span>NFTWorld</span>
+          </a>
+          <div class="nav-links">
+            <a href="create.html">Create</a>
+            <div class="nav-dropdown">
+              <a href="explore.html" class="dropbtn">Explore</a>
+              <div class="nav-dropdown-content">
+                <a href="nfts.html">
+                  <i class="bi bi-patch-check-fill me-2"></i>
+                  NFTs
+                </a>
+                <a href="users.html">
+                  <i class="bi bi-person-fill me-2"></i>
+                  Users
+                </a>
+              </div>
+            </div>
+            <a href="account.html">Sell</a>
+            <a href="marketplace.html">Marketplaces</a>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <div class="search-box">
+            <input
+              type="text"
+              placeholder="Search for NFTS, collections, users."
+              class="form-control"
+            />
+            <i class="bi bi-search"></i>
+          </div>
+
+          <!-- Thêm cart icon vào đây -->
+          <div class="cart-icon">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-badge">0</span>
+            <div class="cart-dropdown">
+              <div class="cart-header">
+                <h6>Your Cart</h6>
+                <button class="clear-cart">Clear All</button>
+              </div>
+              <div class="cart-list">
+                <!-- Cart items will be dynamically added here -->
+                <div class="no-items">Your cart is empty</div>
+              </div>
+              <div class="cart-footer">
+                <div class="cart-total">
+                  <span>Total:</span>
+                  <span class="total-amount">0 TIA</span>
+                </div>
+                <button class="btn btn-primary checkout-btn">Checkout</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thêm notification bell -->
+          <div class="notification-bell">
+            <i class="bi bi-bell"></i>
+            <span class="notification-badge">2</span>
+            <div class="notification-dropdown">
+              <div class="notification-header">
+                <h6>Notifications</h6>
+                <button class="mark-all-read">Mark all as read</button>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon">
+                    <i class="bi bi-coin"></i>
+                  </div>
+                  <div class="notification-content">
+                    <p>Your NFT "Small Unit" has been listed</p>
+                    <span class="notification-time">2 minutes ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon">
+                    <i class="bi bi-wallet2"></i>
+                  </div>
+                  <div class="notification-content">
+                    <p>Successfully connected to wallet</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="walletSection">
+            <button
+              id="connectWalletBtn"
+              class="btn btn-outline-success connect-btn"
+              type="button"
+              onclick="window.location.href='../html/login.html';"
+            >
+              Connect wallet
+            </button>
+
+            <div id="walletInfo" class="dropdown" style="display: none">
+              <div
+                class="wallet-dropdown"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="../assets/user.png"
+                  alt="Wallet Avatar"
+                  class="wallet-avatar"
+                />
+                <span id="navbarUsername">0x0000...0000</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../html/account.html">
+                  <i class="fas fa-user"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="tos.html" target="_blank">
+                  <i class="fas fa-question-circle"></i>
+                  Help Center & Documentation
+                </a>
+                <div class="dropdown-divider"></div>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="toggleChatAssistant()"
+                >
+                  <i class="fas fa-robot"></i>
+                  AI Assistant
+                </a>
+                <div class="dropdown-divider"></div>
+                <div class="network-item">
+                  Network
+                  <span>Forma</span>
+                </div>
+                <div class="theme-item">
+                  Theme
+                  <div class="theme-options">
+                    <button class="theme-btn active">Light</button>
+                    <button class="theme-btn">Dark</button>
+                  </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="disconnectWallet()">
+                  <i class="fas fa-sign-out-alt"></i>
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Rest of the body content -->
+    <div class="main-content">
+      <div class="row">
+        <!-- Form Section -->
+        <div class="col-md-7">
+          <div class="nft-form-container">
+            <h2>Create Your NFT</h2>
+            <p id="nft-type-display"></p>
+
+            <form id="nft-creation-form">
+              <div class="form-group">
+                <label>Upload File</label>
+                <div class="upload-area" id="upload-area">
+                  <div id="upload-content">
+                    <svg
+                      width="50"
+                      height="50"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                      ></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    <p>Click to upload or drag and drop</p>
+                    <span class="supported-formats">
+                      <span>.PNG</span>
+                      <span>.JPG</span>
+                      <span>.MP4</span>
+                      <span>.GLB</span>
+                      <span>.MP3</span>
+                    </span>
+                  </div>
+                  <div id="image-preview" class="image-preview" style="display: none">
+                    <img id="uploaded-image" src="" alt="Uploaded Image" />
+                    <button id="remove-upload" class="remove-upload-btn">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <div id="model-preview" class="model-preview" style="display: none">
+                    <model-viewer
+                      id="uploaded-model"
+                      camera-controls
+                      auto-rotate
+                      style="width: 100%; height: 300px"
+                    ></model-viewer>
+                    <button id="remove-model" class="remove-upload-btn">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Add Video Preview Container -->
+                  <div id="video-preview" class="video-preview" style="display: none">
+                    <video id="uploaded-video" controls style="width: 100%; height: 300px"></video>
+                    <button id="remove-video-upload" class="remove-upload-btn">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                  </div>
+                  <!-- Add Audio Preview Container -->
+                  <div id="audio-preview" class="audio-preview" style="display: none">
+                    <div class="audio-cover-container">
+                      <svg id="audio-cover" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="audio-placeholder-svg">
+                        <rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect>
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <circle cx="12" cy="12" r="1"></circle>
+                        <line x1="9" y1="12" x2="9" y2="12.01"></line>
+                        <line x1="15" y1="12" x2="15" y2="12.01"></line>
+                        <path d="M6 12h0.01"></path>
+                        <path d="M18 12h0.01"></path>
+                      </svg>
+                      <button type="button" id="change-cover" class="change-cover-btn">
+                        <i class="fas fa-image"></i> Change Cover
+                      </button>
+                    </div>
+                    <audio id="uploaded-audio" controls style="width: 100%;"></audio>
+                    <button id="remove-audio-upload" class="remove-upload-btn">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                      </svg>
+                    </button>
+                    <input type="file" id="audio-cover-input" accept=".png,.jpg" style="display: none" />
+                  </div>
+                  <input type="file" id="file-input" style="display: none" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nft-name">Name</label>
+                <input
+                  type="text"
+                  id="nft-name"
+                  required
+                  placeholder="Item name"
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="nft-description">Description</label>
+                <textarea
+                  id="nft-description"
+                  rows="4"
+                  placeholder="Provide a detailed description of your item"
+                ></textarea>
+              </div>
+
+              <div class="form-group">
+                <div class="mint-price-info">
+                  <div class="mint-price-header">
+                    <span class="mint-price-label">Mint Price</span>
+                    <span class="mint-price-amount">
+                      <i class="bi bi-coin"></i>
+                      0.01 TIA
+                    </span>
+                  </div>
+                  <p class="mint-price-note">
+                    This is a one-time fee to mint your NFT on the blockchain.
+                    The price includes network fees.
+                  </p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="nft-royalty">Royalty (%)</label>
+                <input
+                  type="number"
+                  id="nft-royalty"
+                  required
+                  min="0"
+                  max="15"
+                  step="0.1"
+                  placeholder="e.g. 5.0"
+                />
+              </div>
+
+              <div class="advanced-settings-container">
+                <button
+                  type="button"
+                  class="show-advanced-btn"
+                  onclick="toggleAdvancedSettings()"
+                >
+                  Show advanced settings
+                </button>
+
+                <div
+                  id="advanced-settings"
+                  class="advanced-settings"
+                  style="display: none"
+                >
+                  <div class="properties-section">
+                    <div class="properties-header" onclick="toggleProperties()">
+                      <div class="header-content">
+                        <h4>Properties</h4>
+                        <p class="subtitle">
+                          Add properties to your NFT (Optional)
+                        </p>
+                      </div>
+                      <svg
+                        class="arrow-icon"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                      >
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                      </svg>
+                    </div>
+
+                    <div
+                      id="properties-content"
+                      class="properties-content"
+                      style="display: none"
+                    >
+                      <div id="properties-container">
+                        <div class="property-row">
+                          <input
+                            type="text"
+                            placeholder="Property name"
+                            class="property-name"
+                          />
+                          <input
+                            type="text"
+                            placeholder="Value"
+                            class="property-value"
+                          />
+                          <button
+                            type="button"
+                            class="remove-property"
+                            onclick="removeProperty(this)"
+                          >
+                            ×
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="create-nft-btn">Create NFT</button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="col-md-5">
+          <div class="nft-preview-container">
+            <h3>Preview</h3>
+            <div class="nft-preview-card">
+              <div class="preview-image">
+                <svg
+                  id="preview-placeholder"
+                  width="100"
+                  height="100"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
+                </svg>
+                <model-viewer
+                  id="preview-3d-model"
+                  style="width: 100%; height: 400px; display: none"
+                  camera-controls
+                  auto-rotate
+                  exposure="1"
+                  shadow-intensity="1"
+                >
+                </model-viewer>
+                <img
+                  id="preview-image"
+                  src=""
+                  alt="NFT Preview"
+                  style="display: none"
+                />
+                <video
+                  id="preview-video"
+                  style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px; background-color: #f8f9fa; display: none;"
+                  controls
+                >
+                  Your browser does not support the video tag.
+                </video>
+                <div id="preview-audio-container" style="display: none; width: 100%; height: 100%;">
+                  <svg id="preview-audio-cover" width="100%" height="calc(100% - 50px)" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="background-color: #f8f9fa; border-radius: 8px 8px 0 0;" class="audio-placeholder-svg">
+                    <rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect>
+                    <circle cx="12" cy="12" r="4"></circle>
+                    <circle cx="12" cy="12" r="1"></circle>
+                    <line x1="9" y1="12" x2="9" y2="12.01"></line>
+                    <line x1="15" y1="12" x2="15" y2="12.01"></line>
+                    <path d="M6 12h0.01"></path>
+                    <path d="M18 12h0.01"></path>
+                  </svg>
+                  <audio id="preview-audio" controls style="width: 100%; height: 50px; border-radius: 0 0 8px 8px;"></audio>
+                </div>
+              </div>
+              <div class="preview-details">
+                <div class="preview-collection">Collection Name</div>
+                <h4 id="preview-name">NFT Name</h4>
+                <div class="preview-description" id="preview-description">
+                  Description will appear here...
+                </div>
+                <div class="preview-properties" id="preview-properties">
+                  <!-- Properties will be dynamically added here -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="loading-overlay" id="loading-overlay">
+      <div class="loading-spinner">
+        <div class="spinner"></div>
+        <p>Creating your NFT...</p>
+      </div>
+    </div>
+
+    <div class="modal-backdrop" id="modal-backdrop"></div>
+    <div class="nft-info-modal" id="nft-info-modal">
+      <div class="modal-header">
+        <h3>NFT Created Successfully!</h3>
+      </div>
+      <div class="nft-info-content" id="nft-info-content">
+        <div class="nft-success-info">
+          <div class="nft-preview-media">
+            <!-- Image Preview -->
+            <img
+              id="modal-preview-image"
+              src=""
+              alt="NFT Preview"
+              style="display: none"
+            />
+            <!-- 3D Model Preview -->
+            <model-viewer
+              id="modal-preview-model"
+              style="width: 100%; height: 300px; display: none"
+              camera-controls
+              auto-rotate
+              exposure="1"
+              shadow-intensity="1"
+            >
+            </model-viewer>
+            <!-- Video Preview -->
+            <video
+              id="modal-preview-video"
+              controls
+              style="width: 100%; height: 300px; display: none; border-radius: 8px;"
+            >
+              Your browser does not support the video tag.
+            </video>
+            <!-- Audio Preview -->
+            <div id="modal-preview-audio-container" style="display: none; width: 100%; height: 300px;">
+              <div style="width: 100%; height: calc(100% - 50px); background-color: #f8f9fa; border-radius: 8px 8px 0 0; display: flex; align-items: center; justify-content: center;">
+                <svg id="modal-preview-audio-cover" width="80%" height="80%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="audio-placeholder-svg">
+                  <rect x="2" y="6" width="20" height="12" rx="2" ry="2"></rect>
+                  <circle cx="12" cy="12" r="4"></circle>
+                  <circle cx="12" cy="12" r="1"></circle>
+                  <line x1="9" y1="12" x2="9" y2="12.01"></line>
+                  <line x1="15" y1="12" x2="15" y2="12.01"></line>
+                  <path d="M6 12h0.01"></path>
+                  <path d="M18 12h0.01"></path>
+                </svg>
+              </div>
+              <audio id="modal-preview-audio" controls style="width: 100%; height: 50px; border-radius: 0 0 8px 8px;"></audio>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <h4>NFT Details</h4>
+            <div class="info-row">
+              <span class="info-label">Name</span>
+              <span class="info-value" id="modal-nft-name"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Token ID</span>
+              <span class="info-value" id="modal-token-id"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Description</span>
+              <span class="info-value" id="modal-description"></span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">File Type</span>
+              <span class="info-value" id="modal-file-type"></span>
+            </div>
+          </div>
+
+          <div class="info-group">
+            <h4>Transaction Details</h4>
+            <div class="info-row">
+              <span class="info-label">Transaction Hash</span>
+              <span class="info-value">
+                <a id="modal-tx-hash" href="#" target="_blank"></a>
+              </span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">IPFS File</span>
+              <span class="info-value">
+                <a id="modal-ipfs-file" href="#" target="_blank"
+                  >View on IPFS</a
+                >
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="close-button" onclick="closeNFTModal()">Close</button>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Price input handling
+        const priceInput = document.getElementById("mint-price");
+        const previewPrice = document.getElementById("preview-price");
+
+        if (priceInput && previewPrice) {
+          priceInput.addEventListener("input", function (e) {
+            previewPrice.textContent = `${e.target.value || "0.00"} TIA`;
+          });
+        }
+
+        // Name input handling
+        const nameInput = document.getElementById("nft-name");
+        const previewName = document.getElementById("preview-name");
+
+        if (nameInput && previewName) {
+          nameInput.addEventListener("input", function (e) {
+            previewName.textContent = e.target.value || "NFT Name";
+          });
+        }
+
+        // Description input handling
+        const descInput = document.getElementById("nft-description");
+        const previewDesc = document.getElementById("preview-description");
+
+        if (descInput && previewDesc) {
+          descInput.addEventListener("input", function (e) {
+            previewDesc.textContent =
+              e.target.value || "Description will appear here...";
+          });
+        }
+      });
+    </script>
+
+    <script
+      type="module"
+      src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.3.0/model-viewer.min.js"
+    ></script>
+    <script src="/scripts/createNFT.js" defer></script>
+    <script src="../scripts/notification_manager.js" defer></script>
+    <script src="../scripts/cart_manager.js" defer></script>
+    <script src="../scripts/search.js" defer></script>
+    <script src="../scripts/profile_manager.js" defer></script>
+    <script src="../scripts/wallet_manager.js" defer></script>
+    <script src="../scripts/single-nft-form.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+      defer
+    ></script>
+    <!-- Chatbot Popup -->
+    <div id="chat-button">
+      <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" class="hidden">
+      <div id="chat-header">
+        <div class="header-content">
+          <div class="header-info">
+            <div class="avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="header-text">
+              <h3>Chat Assistant</h3>
+              <span class="status">Online</span>
+            </div>
+          </div>
+          <button id="close-chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-body">
+        <div class="message bot">
+          <div class="message-content">
+            <p>Xin chào! Tôi có thể giúp gì cho bạn?</p>
+          </div>
+          <span class="timestamp">12:00</span>
+        </div>
+
+        <div class="quick-replies">
+          <button class="quick-reply" onclick="redirectToPage('index.html')">
+            <i class="fas fa-list"></i> Index
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('create.html')">
+            <i class="fas fa-plus-circle"></i> Create
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('nfts.html')">
+            <i class="fas fa-image"></i> NFTs
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('users.html')">
+            <i class="fas fa-user"></i> Users
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('account.html')">
+            <i class="fas fa-shopping-cart"></i> Sell
+          </button>
+          <button
+            class="quick-reply"
+            onclick="redirectToPage('marketplace.html')"
+          >
+            <i class="fas fa-store"></i> Marketplaces
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('account.html')">
+            <i class="fas fa-user-circle"></i> Profile
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('tos.html')">
+            <i class="fas fa-file-alt"></i> TOS
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-footer">
+        <div class="input-container">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Nhập tin nhắn của bạn..."
+          />
+          <button id="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script src="../scripts/chatbot.js"></script>
+
+    <!-- Thêm Bootstrap JS trước thẻ đóng body -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

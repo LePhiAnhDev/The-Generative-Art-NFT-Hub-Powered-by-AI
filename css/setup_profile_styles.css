@@ -1,0 +1,258 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Inter', sans-serif;
+}
+
+.setup-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+/* Page Title */
+h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 32px;
+}
+
+/* Tabs Navigation */
+.nav-tabs {
+    border-bottom: 1px solid #eaeaea;
+    margin-bottom: 32px;
+    gap: 32px;
+}
+
+.nav-tabs .nav-link {
+    color: #666;
+    border: none;
+    padding: 12px 0;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-tabs .nav-link.active {
+    color: #111;
+    background: none;
+    border: none;
+}
+
+.nav-tabs .nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #111;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #111;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eaeaea;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    border-color: #111;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Form Layout */
+.profile-form {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 32px;
+    align-items: start;
+}
+
+/* Left Side - Text Fields */
+.form-fields {
+    flex: 1;
+}
+
+/* Right Side - Profile Picture */
+.profile-picture-section {
+    position: sticky;
+    top: 100px;
+}
+
+/* Profile Picture Upload */
+.upload-placeholder {
+    width: 350px;
+    min-height: 300px;
+    border: 2px dashed #eaeaea;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background-color: #f8f9fa;
+}
+
+.upload-placeholder:hover {
+    border-color: #111;
+    background-color: #f1f1f1;
+}
+
+#imagePreview {
+    max-width: 280px;
+    max-height: 280px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Remove Button */
+.remove-btn {
+    color: #dc3545;
+    background: none;
+    border: 1px solid #dc3545;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-top: 12px;
+}
+
+.remove-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Character Counter */
+.char-count {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+    margin-top: 4px;
+}
+
+/* Save Button */
+.save-btn {
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.save-btn:hover {
+    background-color: #000;
+    transform: translateY(-1px);
+}
+
+/* Bio Textarea */
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Wallet Section Styles */
+.wallet-section {
+    padding: 20px 0;
+}
+
+.wallet-info {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wallet-address {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+    color: #333;
+}
+
+.wallet-address i {
+    color: #6c757d;
+}
+
+.address-text {
+    font-size: 14px;
+}
+
+.wallet-status {
+    display: flex;
+    align-items: center;
+}
+
+.status-badge {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Form Actions */
+.form-actions {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Small Text */
+.text-muted {
+    color: #6c757d !important;
+    font-size: 0.875rem;
+}
+
+/* Input Group Button */
+.input-group .btn-outline-secondary {
+    border-left: none;
+}
+
+.input-group .form-control:focus+.btn-outline-secondary {
+    border-color: #007bff;
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .profile-form {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-picture-section {
+        position: static;
+    }
+
+    .upload-placeholder {
+        width: 100%;
+    }
+}
+

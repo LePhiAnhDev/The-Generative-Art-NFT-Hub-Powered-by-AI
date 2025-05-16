@@ -1,0 +1,14 @@
+faiss-cpu
+pymongo
+aiohttp
+uvicorn
+numpy
+pydantic
+fastapi
+sentence-transformers
+torch
+imageio
+Pillow
+diffusers
+huggingface_hub
+safetensors

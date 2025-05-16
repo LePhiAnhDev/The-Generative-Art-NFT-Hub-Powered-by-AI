@@ -1,0 +1,210 @@
+/* Reset cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background toàn trang sử dụng ảnh (bạn có thể thay đổi URL ảnh bên dưới) */
+body {
+    font-family: "Inter", sans-serif;
+    background-size: cover;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #f5f5f5;
+}
+
+/* Navbar */
+header {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #eaeaea;
+    padding: 20px 0;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo bên trái: bạn có thể thay đổi src để dùng logo của bạn */
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    max-height: 50px;
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    font-size: 26px;
+    font-weight: bold;
+    color: #111;
+}
+
+/* Chỉ hiển thị thay đổi ngôn ngữ bên phải */
+.language-switcher {
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.language-switcher:hover {
+    color: #000;
+}
+
+.language-switcher i {
+    font-size: 18px;
+}
+
+/* Container chung */
+.main-container {
+    flex: 1;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Box */
+.search-container {
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 18px 25px;
+    padding-right: 130px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.2s ease;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.search-container input[type="text"]:focus {
+    outline: none;
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.search-container input[type="text"]::placeholder {
+    color: #999;
+}
+
+.search-container button {
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 12px 24px;
+    border: none;
+    background-color: #333;
+    color: #fff;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.search-container button:hover {
+    background-color: #000;
+    transform: translateY(-50%) translateX(-1px);
+}
+
+/* Grid các ô FAQ */
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 0 10px;
+}
+
+/* Card FAQ: hình vuông, bo tròn góc, sinh động */
+.faq-card {
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    transition: all 0.25s ease;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.faq-card:hover {
+    transform: translateY(-2px);
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.faq-card h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    position: relative;
+    padding-right: 35px;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
+
+.faq-card h3:after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    color: #000;
+    transition: all 0.3s ease;
+}
+
+.faq-card.active h3:after {
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.faq-card p {
+    display: none;
+    margin-top: 15px;
+    font-size: 15px;
+    padding-left: 15px;
+    border-left: 3px solid #000;
+    line-height: 1.6;
+    color: #546e7a;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.faq-card.active p {
+    display: block;
+    opacity: 1;
+}
+
+.faq-card.active {
+    height: auto;
+}

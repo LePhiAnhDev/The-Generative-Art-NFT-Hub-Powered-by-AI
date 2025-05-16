@@ -1,0 +1,1684 @@
+/* Reset và Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container styles */
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Form container */
+.form-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 0;
+  height: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Form header layout with border */
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 24px;
+  border-bottom: 1px solid #d0d5dd;
+  background: #fff;
+  margin-left: 50px;
+}
+
+/* Form title/header styles */
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+}
+
+/* Section title styles */
+.section-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 16px 0;
+  padding: 0;
+  color: #1a1a1a;
+}
+
+/* Form group styles */
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.nft-form-control {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+  margin-bottom: 16px;
+}
+
+.nft-form-control:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+/* File input styles */
+.file-input-container {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.file-input-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  border: 2px dashed #e5e8eb;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.file-input-label:hover {
+  border-color: #0d6efd;
+  background-color: rgba(13, 110, 253, 0.05);
+}
+
+.file-input-label i {
+  font-size: 32px;
+  color: #0d6efd;
+  margin-bottom: 12px;
+}
+
+.file-input-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.file-input {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+/* Preview container */
+.preview-container {
+  position: sticky;
+  top: 20px;
+  padding: 20px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.nft-preview-card {
+  border: 1px solid #d0d5dd;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+}
+
+/* Preview image container */
+.preview-image {
+  position: relative;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#preview-video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* Loading spinner */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Preview placeholder */
+#preview-placeholder {
+  width: 100px;
+  height: 100px;
+  color: #ccc;
+}
+
+/* Preview image */
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.preview-details {
+  padding: 20px;
+}
+
+.preview-collection {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.preview-details h4 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.preview-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+  .nft-preview-container {
+    position: static;
+    margin-top: 40px;
+  }
+
+  .container-fluid {
+    padding: 0 15px;
+  }
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  color: #0d6efd !important;
+}
+
+/* Button Styles */
+.generate-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 40px;
+  line-height: 24px;
+}
+
+.generate-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.generate-btn:active {
+  background-color: #dee2e6;
+}
+
+.create-nft-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 24px;
+}
+
+.create-nft-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+/* Advanced Settings Button */
+.show-advanced-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.show-advanced-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+/* Xóa các style liên quan đến mũi tên */
+.show-advanced-btn::after {
+  display: none;
+}
+
+/* Secondary button style */
+.secondary-button {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Remove các style button cũ không cần thiết */
+.btn {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background-color: #5c636a;
+}
+
+/* Generative Art specific styles */
+.canvas-container {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#artCanvas {
+  border: 1px solid #e5e8eb;
+  border-radius: 8px;
+  background: white;
+}
+
+.controls-container {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.control-group {
+  margin-bottom: 16px;
+}
+
+.control-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.control-input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #e5e8eb;
+  border-radius: 6px;
+}
+
+/* Color picker styles */
+.color-picker {
+  width: 100%;
+  height: 40px;
+  padding: 4px;
+  border: 1px solid #e5e8eb;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Button group */
+.button-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* NFT Details Section */
+.nft-details-section {
+  margin: 0 !important;
+  padding: 24px;
+  border-top: 1px solid #d0d5dd;
+  background: #fff;
+}
+
+.advanced-settings {
+  margin: 20px 0;
+}
+
+.advanced-settings .btn-link {
+  padding: 0;
+  color: #0d6efd;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.advanced-settings .btn-link i {
+  margin-left: 8px;
+  transition: transform 0.2s ease;
+}
+
+.advanced-settings .btn-link[aria-expanded="true"] i {
+  transform: rotate(180deg);
+}
+
+.slider-value {
+  float: right;
+  color: #666;
+  font-weight: normal;
+}
+
+/* Mint price styles */
+.mint-price-info {
+  background: #f8f9fa;
+  border: 1px solid #d0d5dd;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.mint-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #d0d5dd;
+}
+
+.mint-price-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.mint-price-amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mint-price-amount i {
+  font-size: 18px;
+  color: #000;
+}
+
+.mint-price-note {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Royalty Input Specific Styles */
+.royalty-input-container {
+  position: relative;
+  width: 100%;
+}
+
+#nft-royalty {
+  width: 100%;
+  padding: 12px;
+  padding-right: 30px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+#nft-royalty:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Form label styles */
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Advanced Settings Container */
+.advanced-settings-container {
+  margin-top: 24px;
+}
+
+/* Properties Section Styles */
+.properties-section {
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.properties-header {
+  padding: 12px 16px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.3s ease;
+}
+
+.properties-header:hover {
+  background: #f8f9fa;
+}
+
+.properties-header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.properties-header-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  font-weight: 500;
+}
+
+.properties-header-content .subtitle {
+  margin: 0;
+  font-size: 12px;
+  color: #666;
+  font-weight: normal;
+}
+
+.properties-content {
+  padding: 16px;
+  border-top: 1px solid #d0d5dd;
+  background: #fff;
+}
+
+.property-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.property-name,
+.property-value {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.remove-property {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #d0d5dd;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #666;
+}
+
+.remove-property:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.add-property-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+  margin-top: 12px;
+}
+
+.add-property-btn:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+/* Royalty Input Specific Styles */
+.royalty-input-container {
+  position: relative;
+  width: 100%;
+}
+
+#nft-royalty {
+  width: 100%;
+  padding: 12px;
+  padding-right: 30px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+.royalty-symbol {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* Advanced Settings Animation */
+.advanced-settings {
+  transition: all 0.3s ease-in-out;
+}
+
+.advanced-settings.show {
+  margin-top: 20px;
+}
+
+/* Properties Toggle Animation */
+.properties-header .arrow-icon {
+  transform: rotate(0deg);
+}
+
+.properties-header[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Preview Properties Styles */
+.preview-properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.preview-property {
+  background: #f8f9fa;
+  border: 1px solid #d0d5dd;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.preview-property .property-name {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.preview-property .property-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  word-break: break-word;
+}
+
+/* Range input styles */
+.form-range {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 4px;
+  background: #e5e8eb;
+  border-radius: 2px;
+  margin: 15px 0;
+  position: relative;
+}
+
+/* Thumb styles (nút tròn) */
+.form-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #d0d5dd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: -8px;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid #d0d5dd;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: -8px;
+}
+
+/* Hover state - xóa màu xanh */
+.form-range::-webkit-slider-thumb:hover {
+  border-color: #d0d5dd;
+  box-shadow: 0 0 0 4px rgba(208, 213, 221, 0.1);
+}
+
+.form-range::-moz-range-thumb:hover {
+  border-color: #d0d5dd;
+  box-shadow: 0 0 0 4px rgba(208, 213, 221, 0.1);
+}
+
+/* Active state - xóa màu xanh */
+.form-range::-webkit-slider-thumb:active {
+  background: #fff;
+  border-color: #d0d5dd;
+}
+
+.form-range::-moz-range-thumb:active {
+  background: #fff;
+  border-color: #d0d5dd;
+}
+
+/* Track styles (thanh trượt) */
+.form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: #e5e8eb;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.form-range::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: #e5e8eb;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+/* Arrow Animation Styles */
+.arrow-icon {
+  margin-top: 8px;
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+/* Properties Header Arrow Animation */
+.properties-header[aria-expanded="true"] .arrow-icon {
+  transform: rotate(180deg);
+}
+
+/* Advanced Settings Arrow */
+.show-advanced-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.show-advanced-btn::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid #666;
+  border-bottom: 2px solid #666;
+  transform: rotate(45deg);
+  transition: transform 0.3s ease;
+  margin-top: -4px;
+}
+
+.show-advanced-btn.active::after {
+  transform: rotate(-135deg);
+  margin-top: 4px;
+}
+
+/* Form wrapper styles */
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding-top: 0;
+  /* Xóa padding top */
+}
+
+/* Đảm bảo các section có width giống nhau */
+.form-wrapper > div {
+  width: 100%;
+  max-width: 800px;
+}
+
+/* Prompt section with top margin */
+.prompt-section {
+  margin-top: 0;
+  background: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #d0d5dd;
+}
+
+/* Prompt textarea styling */
+#prompt {
+  width: 100%;
+  min-height: 45px;
+  padding: 8px 12px;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  resize: vertical;
+  transition: all 0.2s ease;
+  background: #fff;
+  color: #333;
+  margin-bottom: 12px;
+  line-height: 1.5;
+}
+
+#prompt:focus {
+  border-color: #0d6efd;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.1);
+}
+
+/* Generate button styling */
+.generate-btn {
+  width: 100%;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #d0d5dd;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  height: 40px;
+  line-height: 24px;
+}
+
+.generate-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.generate-btn:active {
+  background-color: #dee2e6;
+}
+
+/* Loading Modal Styles */
+.loading-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.loading-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loading-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+.loading-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.step-status {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-status i {
+  font-size: 16px;
+}
+
+.step-text {
+  flex: 1;
+  font-size: 14px;
+  color: #666;
+}
+
+.step-pending i {
+  color: #6c757d;
+}
+
+.step-loading i {
+  color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+.step-success i {
+  color: #28a745;
+}
+
+/* ===== MODAL SUCCESS STYLES START ===== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+}
+
+.nft-info-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  z-index: 1001;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+/* Modal Content */
+.nft-info-content {
+  padding: 24px;
+}
+
+.nft-success-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* NFT Image Preview */
+.nft-image-preview {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.nft-image-preview img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Info Groups & Rows */
+.info-group {
+  border-top: 1px solid #eee;
+  padding-top: 16px;
+}
+
+.info-group h4 {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-label {
+  color: #666;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.info-value a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-value a:hover {
+  text-decoration: underline;
+}
+
+/* Modal Header & Close Button */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
+/* Modal Tabs */
+.tabs-container {
+  margin-top: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+  padding: 0 10px;
+}
+
+.tab-btn {
+  padding: 12px 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  color: #333;
+}
+
+.tab-btn.active {
+  color: #000;
+  font-weight: 500;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+}
+
+.tab-content {
+  display: none;
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Properties Grid */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.property-item {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.property-item:hover {
+  border-color: #000;
+  transform: translateY(-2px);
+}
+
+.property-type {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.property-value {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.no-properties {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+/* ===== MODAL SUCCESS STYLES END ===== */
+
+/* NFT Preview Section */
+.nft-preview-section {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 20px;
+}
+
+.nft-basic-info {
+  margin-top: 20px;
+}
+
+.nft-basic-info h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.token-id {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 20px;
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Properties Grid */
+.properties-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.property-item {
+  background: #f8f9fa;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  transition: all 0.3s ease;
+}
+
+.property-item:hover {
+  border-color: #000;
+  transform: translateY(-2px);
+}
+
+.property-type {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.property-value {
+  display: block;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.no-properties {
+  text-align: center;
+  color: #666;
+  padding: 20px;
+}
+
+/* Modal header styles */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Close button styles */
+.modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  line-height: 1;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background: #f5f5f5;
+  color: #000;
+}
+
+/* Xóa styles của nút close cũ */
+.modal-footer {
+  display: none;
+}
+
+/* Switch toggle styles */
+.switch {
+  --_switch-bg-clr: #e5e7eb;
+  --_switch-padding: 4px;
+  --_slider-bg-clr: rgba(0, 0, 0, 0.1);
+  --_slider-bg-clr-on: rgba(0, 0, 0, 0.2);
+  --_slider-txt-clr: #000000;
+  --_label-padding: 0.5rem 1rem;
+  --_switch-easing: cubic-bezier(0.47, 1.64, 0.41, 0.8);
+
+  background-color: white;
+  border: 1px solid #d0d5dd;
+  color: black;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  border-radius: 9999px;
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  position: relative;
+  isolation: isolate;
+}
+
+.switch input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.switch > span {
+  display: grid;
+  place-content: center;
+  transition: opacity 300ms ease-in-out 150ms;
+  padding: var(--_label-padding);
+  font-size: 14px;
+}
+
+.switch::before,
+.switch::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+  transition: inset 150ms ease-in-out;
+}
+
+.switch::before {
+  background-color: var(--_slider-bg-clr);
+  inset: var(--_switch-padding) 50% var(--_switch-padding)
+    var(--_switch-padding);
+  transition: inset 500ms var(--_switch-easing),
+    background-color 500ms ease-in-out;
+  z-index: -1;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.3);
+}
+
+.switch::after {
+  background-color: var(--_switch-bg-clr);
+  inset: 0;
+  z-index: -2;
+}
+
+.switch:focus-within::after {
+  inset: -0.25rem;
+}
+
+.switch:has(input:checked):hover > span:first-of-type,
+.switch:has(input:not(:checked)):hover > span:last-of-type {
+  opacity: 1;
+  transition-delay: 0ms;
+  transition-duration: 100ms;
+}
+
+.switch:has(input:checked):hover::before {
+  inset: var(--_switch-padding) var(--_switch-padding) var(--_switch-padding)
+    45%;
+}
+
+.switch:has(input:not(:checked)):hover::before {
+  inset: var(--_switch-padding) 45% var(--_switch-padding)
+    var(--_switch-padding);
+}
+
+.switch:has(input:checked)::before {
+  background-color: var(--_slider-bg-clr-on);
+  inset: var(--_switch-padding) var(--_switch-padding) var(--_switch-padding)
+    50%;
+}
+
+.switch > span:last-of-type,
+.switch > input:checked + span:first-of-type {
+  opacity: 0.75;
+}
+
+.switch > input:checked ~ span:last-of-type {
+  opacity: 1;
+}
+
+/* Loading Progress Text */
+.loading-progress-text {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #666;
+  white-space: nowrap;
+}
+
+/* Enhanced Notification Styles */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 20px;
+  border-radius: 8px;
+  z-index: 1000;
+  min-width: 300px;
+  max-width: 400px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateX(0);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.notification.success {
+  border-left: 4px solid #4CAF50;
+}
+
+.notification.error {
+  border-left: 4px solid #f44336;
+}
+
+.notification.info {
+  border-left: 4px solid #2196F3;
+}
+
+.notification.warning {
+  border-left: 4px solid #ff9800;
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.notification-content i {
+  font-size: 20px;
+}
+
+.notification-content i.fa-check-circle {
+  color: #4CAF50;
+}
+
+.notification-content i.fa-exclamation-circle {
+  color: #f44336;
+}
+
+.notification-content i.fa-info-circle {
+  color: #2196F3;
+}
+
+.notification-content i.fa-exclamation-triangle {
+  color: #ff9800;
+}
+
+.notification-content span {
+  flex: 1;
+  color: #333;
+  font-size: 14px;
+}
+
+.notification-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #e0e0e0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.notification-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: #666;
+  transform: translateX(-100%);
+}
+
+@keyframes notification-progress {
+  to {
+    transform: translateX(0);
+  }
+}
+
+.notification.fade-out {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+/* Generate Button Loading State */
+.generate-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.generate-btn i {
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fa-spinner {
+  animation: spin 1s linear infinite;
+}
+
+/* Loading Spinner Enhancement */
+.loading-spinner {
+  position: relative;
+}
+
+.loading-spinner::after {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  left: 50%;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Preview Container Loading State */
+.preview-container.loading {
+  position: relative;
+}
+
+.preview-container.loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+/* Error Modal Styles */
+.error-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.error-modal-content {
+  background: white;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.error-modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-modal-header h3 {
+  margin: 0;
+  color: #f44336;
+  font-size: 18px;
+}
+
+.close-error-modal {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.error-modal-body {
+  padding: 20px;
+}
+
+.error-message {
+  color: #f44336;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.error-details {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 4px;
+  margin-top: 16px;
+}
+
+.error-details pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #eee;
+  padding: 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.error-modal-footer {
+  padding: 16px 20px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.copy-error {
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.close-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Remove spinner styles */
+.loading-spinner::after {
+  display: none;
+}
+
+/* Preview Container Loading State */
+.preview-container.loading::before {
+  background: rgba(255, 255, 255, 0.5);
+}

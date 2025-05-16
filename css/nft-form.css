@@ -1,0 +1,1540 @@
+html,
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.nft-form-container {
+  background: #fff;
+  border-radius: 12px;
+  padding: 30px;
+  height: 100%;
+}
+
+.nft-form-container h2 {
+  font-size: 24px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #f8f9fa;
+  border-color: #dee2e6;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.back-button svg {
+  width: 20px;
+  height: 20px;
+  stroke: #666;
+}
+
+.back-button span {
+  font-size: 14px;
+}
+
+.form-group {
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.upload-area {
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  background: #fff;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.upload-area:hover {
+  border-color: #007bff;
+  background: #f8f9fa;
+}
+
+#upload-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+}
+
+#preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+#preview-container svg {
+  width: 32px;
+  height: 32px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+#preview-container p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+#preview-container > span {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+}
+
+.supported-formats {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.supported-formats span {
+  font-size: 12px;
+  color: #666;
+  background: #f8f9fa;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.supported-formats span:hover {
+  background: #fff;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.image-preview {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: none;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.model-preview {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  display: none;
+}
+
+.model-preview model-viewer {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+
+.remove-upload-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 16px;
+  color: #666;
+}
+
+.remove-upload-btn:hover {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
+.remove-upload-btn svg {
+  width: 16px;
+  height: 16px;
+  stroke: #666;
+}
+
+.remove-upload-btn:hover svg {
+  stroke: #333;
+}
+
+#preview-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+#preview-container svg {
+  width: 48px;
+  height: 48px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+#preview-container p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+}
+
+#preview-container > span {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+.property-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.property-name,
+.property-value {
+  flex: 1;
+}
+
+.remove-property {
+  padding: 0 12px;
+  background: none;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.secondary-button {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.create-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.create-button:hover {
+  background-color: #0056b3;
+}
+
+#nft-type-display {
+  color: #666;
+  margin-bottom: 24px;
+}
+
+.container-fluid {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nft-preview-container {
+  position: sticky;
+  top: 20px;
+  padding: 20px;
+}
+
+.nft-preview-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.preview-image {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.preview-image svg {
+  width: 100px;
+  height: 100px;
+  color: #ccc;
+}
+
+.preview-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  padding: 0;
+}
+
+.preview-details {
+  padding: 20px;
+}
+
+.preview-collection {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.preview-details h4 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.preview-description {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.preview-properties {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 8px;
+}
+
+.preview-property {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 8px;
+  text-align: center;
+}
+
+.preview-property .property-name {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+}
+
+.preview-property .property-value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Make the layout responsive */
+@media (max-width: 768px) {
+  .nft-preview-container {
+    position: static;
+    margin-top: 40px;
+  }
+
+  .container-fluid {
+    padding: 0 15px;
+  }
+}
+
+.advanced-settings {
+  background: #fff;
+  border-radius: 8px;
+  margin-top: 8px;
+}
+
+.properties-section {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.properties-header {
+  padding: 15px;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.properties-header:hover {
+  background: #f8f9fa;
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  text-align: left;
+  align-items: flex-start;
+}
+
+.header-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+  width: 100%;
+}
+
+.header-content .subtitle {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  width: 100%;
+}
+
+.arrow-icon {
+  margin-top: 0;
+}
+
+.properties-content {
+  padding: 15px;
+  border-top: 1px solid #e0e0e0;
+  background: #fff;
+}
+
+.add-property-btn {
+  background: none;
+  border: 1px solid #e0e0e0;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.add-property-btn:hover {
+  background: #f8f9fa;
+  border-color: #ccc;
+}
+
+.create-nft-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 24px;
+}
+
+.create-nft-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.remove-property {
+  width: 36px;
+  height: 36px;
+  border: 1px solid #e0e0e0;
+  background: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #666;
+}
+
+.remove-property:hover {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.property-name,
+.property-value {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+  text-align: left;
+}
+
+.show-advanced-btn {
+  width: 100%;
+  padding: 16px;
+  background-color: #f8f9fa;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 24px 0;
+  text-align: center;
+}
+
+.show-advanced-btn:hover {
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+/* Loading Overlay */
+.loading-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+/* Notifications */
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 15px 25px;
+  border-radius: 4px;
+  color: white;
+  z-index: 1000;
+  animation: slideIn 0.5s ease-out;
+}
+
+.success {
+  background-color: #4caf50;
+}
+
+.error {
+  background-color: #f44336;
+}
+
+/* Modal Styles */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.nft-info-modal {
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.modal-header {
+  padding: 24px 32px;
+  border-bottom: 1px solid #eee;
+  background: #fff;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+.nft-success-info {
+  padding: 32px;
+}
+
+.nft-image-preview {
+  text-align: center;
+  margin: 0 auto 32px auto;
+  max-width: 300px;
+}
+
+.nft-image-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-group {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 16px;
+  padding: 32px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.info-group h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 24px 0;
+  padding: 0 0 16px 0;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+}
+
+.info-row {
+  display: flex;
+  align-items: center;
+  padding: 16px 32px;
+  margin: 0 16px 12px 16px;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.info-row:last-child {
+  margin-bottom: 0;
+}
+
+.info-row:hover {
+  background: #fff;
+  border-color: #dee2e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transform: translateY(-1px);
+}
+
+.info-label {
+  font-weight: 500;
+  color: #6c757d;
+  font-size: 14px;
+  padding-left: 16px;
+  padding-right: 24px;
+  flex: 0 0 160px;
+  text-align: right;
+}
+
+.info-value {
+  color: #212529;
+  font-size: 14px;
+  font-weight: 500;
+  flex: 1;
+  text-align: left;
+  padding-left: 24px;
+  padding-right: 16px;
+}
+
+.info-value a {
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+  padding: 4px 0;
+}
+
+.info-value a:hover {
+  color: #0a58ca;
+  text-decoration: underline;
+}
+
+.modal-footer {
+  padding: 24px 32px;
+  border-top: 1px solid #eee;
+  background: #fff;
+}
+
+/* Animation */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nft-info-modal {
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+/* Scrollbar Styling */
+.nft-success-info {
+  scrollbar-width: thin;
+  scrollbar-color: #dee2e6 #fff;
+}
+
+.nft-success-info::-webkit-scrollbar {
+  width: 8px;
+}
+
+.nft-success-info::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.nft-success-info::-webkit-scrollbar-thumb {
+  background-color: #dee2e6;
+  border-radius: 4px;
+  border: 2px solid #fff;
+}
+
+/* Loading Modal Styles */
+.loading-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-content {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 400px;
+  max-width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.loading-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.loading-steps {
+  margin: 20px 0;
+}
+
+.loading-step {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  transition: all 0.3s ease;
+}
+
+.step-status {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-text {
+  color: #333;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Step States */
+.step-pending {
+  color: #adb5bd;
+}
+
+.step-loading {
+  color: #007bff;
+  animation: spin 1s linear infinite;
+}
+
+.step-success {
+  color: #28a745;
+}
+
+.step-status i {
+  font-size: 18px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Active step highlight */
+.loading-step.active {
+  border-color: #007bff;
+  background: #f8f9fa;
+}
+
+/* Success Modal Styles */
+#modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: none;
+}
+
+#nft-info-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  z-index: 1001;
+  display: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.nft-success-info {
+  padding: 20px;
+}
+
+.nft-image-preview {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.nft-image-preview img {
+  max-width: 200px;
+  max-height: 200px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.info-group {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.info-group h4 {
+  margin: 0 0 12px 0;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.info-group p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.info-group a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.info-group a:hover {
+  text-decoration: underline;
+}
+
+.modal-header {
+  padding: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.modal-footer {
+  padding: 20px;
+  border-top: 1px solid #e0e0e0;
+  text-align: right;
+}
+
+.close-button {
+  width: auto;
+  min-width: 200px;
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.close-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.close-button i {
+  transition: all 0.3s ease;
+}
+
+.close-button:hover i {
+  color: #fff;
+}
+
+.close-button:active {
+  transform: scale(0.98);
+}
+
+.info-row {
+  display: flex;
+  margin-bottom: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.info-label {
+  flex: 0 0 140px;
+  font-weight: 500;
+  color: #666;
+}
+
+.info-value {
+  flex: 1;
+  color: #333;
+}
+
+.info-group {
+  margin-bottom: 24px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.info-group h4 {
+  margin-bottom: 16px;
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.price-details {
+  margin-top: 10px;
+  font-size: 14px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  background-color: #f8f9fa;
+}
+
+.fee-row,
+.receive-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0;
+  color: #666;
+  padding: 8px 0;
+}
+
+.fee-row {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Thêm style cho fee label */
+.fee-label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.fee-percentage {
+  color: #999;
+  font-size: 13px;
+}
+
+/* Căn chỉnh số tiền */
+.platform-fee,
+.you-will-receive {
+  font-weight: 500;
+  color: #333;
+  text-align: right;
+  min-width: 100px;
+  /* Đảm bảo khoảng cách đều nhau */
+}
+
+/* Hover effect */
+.price-details:hover {
+  border-color: #ccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.price-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.price-input-container input {
+  border: none;
+  flex: 1;
+  padding-right: 60px;
+  /* Để chừa chỗ cho đơn vị TIA */
+}
+
+.price-input-container input:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.price-divider {
+  width: 1px;
+  height: 20px;
+  background-color: #e0e0e0;
+  margin: 0 12px;
+}
+
+.price-currency {
+  color: #666;
+  font-size: 14px;
+  padding-right: 12px;
+  user-select: none;
+}
+
+/* Khi focus vào input, highlight cả container */
+.price-input-container:focus-within {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Mint Price Section */
+.mint-price-info {
+  background: #f8f9fa;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.mint-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.mint-price-label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.mint-price-amount {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000;
+}
+
+.mint-price-amount i {
+  font-size: 18px;
+  color: #000;
+}
+
+.mint-price-note {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+#preview-3d-model {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background: #f8f9fa;
+}
+
+.preview-image model-viewer {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border-radius: 12px 12px 0 0;
+  background: #f8f9fa;
+}
+
+/* 3D Model Preview Styles */
+#3d-preview {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background: #f8f9fa;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+model-viewer {
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  --progress-bar-color: #333;
+  --progress-mask: #4caf50;
+}
+
+.model-controls {
+  display: none;
+}
+
+/* Model Preview Styles */
+.model-preview {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: none;
+  background: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.model-preview model-viewer {
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+  --progress-bar-color: #333;
+  --progress-mask: #4caf50;
+}
+
+/* Đảm bảo nút remove hiển thị trên cả image và model preview */
+.remove-upload-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 10;
+  font-size: 20px;
+  color: #666;
+}
+
+.remove-upload-btn:hover {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #333;
+}
+
+.nft-preview-media {
+  width: 100%;
+  margin-bottom: 24px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f8f9fa;
+}
+
+.nft-preview-media img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.nft-preview-media model-viewer {
+  width: 100%;
+  height: 300px;
+  border-radius: 12px;
+  background: #f8f9fa;
+  --poster-color: transparent;
+  --progress-bar-color: #333;
+  --progress-mask: #4caf50;
+}
+
+/* Controls cho model viewer */
+model-viewer::part(default-progress-bar) {
+  height: 3px;
+  background: #e0e0e0;
+}
+
+model-viewer::part(default-progress-mask) {
+  background: #333;
+}
+
+/* Loading state cho 3D model */
+.model-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #666;
+}
+
+.model-loading .spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.wallet-dropdown {
+  cursor: pointer;
+}
+
+.preview-image video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+}
+
+#preview-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  background-color: #f8f9fa;
+  display: block;
+  max-width: 100%;
+  max-height: 400px;
+}
+
+.video-preview {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: none;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-preview video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
+
+.video-preview .remove-upload-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.video-preview .remove-upload-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.video-preview .remove-upload-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Adjust video controls */
+video::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 0 8px 8px;
+}
+
+video::-webkit-media-controls-panel {
+  padding: 0 10px;
+}
+
+video::-webkit-media-controls-play-button {
+  margin: 0 5px;
+}
+
+video::-webkit-media-controls-timeline {
+  margin: 0 10px;
+}
+
+video::-webkit-media-controls-current-time-display,
+video::-webkit-media-controls-time-remaining-display {
+  margin: 0 5px;
+}
+
+/* Audio Preview Styles */
+.audio-preview {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: none;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.audio-cover-container {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background-color: #f8f9fa;
+}
+
+.audio-cover-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.change-cover-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 5px 15px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.change-cover-btn:hover {
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.audio-preview audio {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 0 8px 8px;
+}
+
+.audio-preview .remove-upload-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.audio-preview .remove-upload-btn:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.audio-preview .remove-upload-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Customize audio controls */
+audio::-webkit-media-controls {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+audio::-webkit-media-controls-panel {
+  padding: 0 10px;
+}
+
+audio::-webkit-media-controls-play-button {
+  margin: 0 5px;
+}
+
+audio::-webkit-media-controls-timeline {
+  margin: 0 10px;
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+  margin: 0 5px;
+  color: #fff;
+}
+
+/* Audio preview in NFT preview section */
+#preview-audio-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+#preview-audio-cover {
+  width: 100%;
+  height: calc(100% - 50px);
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+}
+
+#preview-audio {
+  width: 100%;
+  height: 50px;
+  border-radius: 0 0 8px 8px;
+}

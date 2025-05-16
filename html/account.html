@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NFTWorld - Account Settings</title>
+    <link rel="icon" type="image/png" href="../assets/Logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="../css/shared_navbar.css" />
+    <link rel="stylesheet" href="../css/account_styles.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <style>
+      /* Điều chỉnh kích thước ảnh trong profile section */
+      .profile-section .profile-avatar {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto 20px;
+        position: relative;
+      }
+
+      .profile-section .profile-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Thêm hiệu ứng hover nhẹ */
+      .profile-section .profile-avatar img:hover {
+        transform: scale(1.02);
+        transition: transform 0.3s ease;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ================== NAVBAR ================== -->
+    <nav class="navbar">
+      <div class="container">
+        <div class="nav-group">
+          <a href="index.html" class="logo-brand">
+            <img src="../assets/Logo.png" alt="Logo" width="40" />
+            <span>NFTWorld</span>
+          </a>
+          <div class="nav-links">
+            <a href="create.html">Create</a>
+            <div class="nav-dropdown">
+              <a href="explore.html" class="dropbtn">Explore</a>
+              <div class="nav-dropdown-content">
+                <a href="nfts.html">
+                  <i class="bi bi-patch-check-fill me-2"></i>
+                  NFTs
+                </a>
+                <a href="users.html">
+                  <i class="bi bi-person-fill me-2"></i>
+                  Users
+                </a>
+              </div>
+            </div>
+            <a href="account.html">Sell</a>
+            <a href="marketplace.html">Marketplaces</a>
+          </div>
+        </div>
+        <div class="navbar-right">
+          <div class="search-box">
+            <input
+              type="text"
+              placeholder="Search for NFTS, collections, users."
+              class="form-control"
+            />
+            <i class="bi bi-search"></i>
+          </div>
+
+          <!-- Thêm cart icon vào đây -->
+          <div class="cart-icon">
+            <i class="bi bi-cart3"></i>
+            <span class="cart-badge">0</span>
+            <div class="cart-dropdown">
+              <div class="cart-header">
+                <h6>Your Cart</h6>
+                <button class="clear-cart">Clear All</button>
+              </div>
+              <div class="cart-list">
+                <!-- Cart items will be dynamically added here -->
+                <div class="no-items">Your cart is empty</div>
+              </div>
+              <div class="cart-footer">
+                <div class="cart-total">
+                  <span>Total:</span>
+                  <span class="total-amount">0 TIA</span>
+                </div>
+                <button class="btn btn-primary checkout-btn">Checkout</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thêm notification bell -->
+          <div class="notification-bell">
+            <i class="bi bi-bell"></i>
+            <span class="notification-badge">2</span>
+            <div class="notification-dropdown">
+              <div class="notification-header">
+                <h6>Notifications</h6>
+                <button class="mark-all-read">Mark all as read</button>
+              </div>
+              <div class="notification-list">
+                <div class="notification-item unread">
+                  <div class="notification-icon">
+                    <i class="bi bi-coin"></i>
+                  </div>
+                  <div class="notification-content">
+                    <p>Your NFT "Small Unit" has been listed</p>
+                    <span class="notification-time">2 minutes ago</span>
+                  </div>
+                </div>
+                <div class="notification-item">
+                  <div class="notification-icon">
+                    <i class="bi bi-wallet2"></i>
+                  </div>
+                  <div class="notification-content">
+                    <p>Successfully connected to wallet</p>
+                    <span class="notification-time">1 hour ago</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="walletSection">
+            <button
+              id="connectWalletBtn"
+              class="btn btn-outline-success connect-btn"
+              type="button"
+              onclick="window.location.href='../html/login.html';"
+            >
+              Connect wallet
+            </button>
+
+            <div id="walletInfo" class="dropdown" style="display: none">
+              <div class="wallet-dropdown" data-bs-toggle="dropdown">
+                <img
+                  src="../assets/user.png"
+                  alt="Wallet Avatar"
+                  class="wallet-avatar"
+                />
+                <span id="navbarUsername">0x0000...0000</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="../html/account.html">
+                  <i class="fas fa-user"></i>
+                  Profile
+                </a>
+                <a class="dropdown-item" href="tos.html" target="_blank">
+                  <i class="fas fa-question-circle"></i>
+                  Help Center & Documentation
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="toggleChatAssistant()">
+                  <i class="fas fa-robot"></i>
+                  AI Assistant
+              </a>
+              <div class="dropdown-divider"></div>
+                <div class="network-item">
+                  Network
+                  <span>Forma</span>
+                </div>
+                <div class="theme-item">
+                  Theme
+                  <div class="theme-options">
+                    <button class="theme-btn active">Light</button>
+                    <button class="theme-btn">Dark</button>
+                  </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" onclick="disconnectWallet()">
+                  <i class="fas fa-sign-out-alt"></i>
+                  Sign Out
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-container">
+      <section class="profile-section">
+        <div class="profile-avatar">
+          <img
+            id="profileImage"
+            src="../assets/user.png"
+            alt="Profile Picture"
+            loading="lazy"
+          />
+        </div>
+        <h2 id="profileName" class="mb-2">Loading...</h2>
+        <div class="d-flex align-items-center justify-content-center mb-3">
+          <span
+            class="copy-address"
+            onclick="copyAddress()"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            title="Copy address"
+          >
+            <i class="fas fa-wallet me-1"></i>
+            <span id="shortAddressDisplay"></span>
+          </span>
+        </div>
+        <p id="profileBio" class="text-muted">Loading bio...</p>
+        <div class="profile-links d-flex justify-content-center gap-3 mb-4">
+          <a href="setup_profile.html">
+            <i class="fas fa-user-edit"></i>
+            Set up your profile
+          </a>
+          <a href="#" class="verify">
+            <i class="fas fa-check-circle"></i>
+            Request verification
+          </a>
+        </div>
+      </section>
+
+      <!-- Tabs -->
+      <nav class="tabs-nav">
+        <ul>
+          <li><a href="#collected">Collected</a></li>
+          <li><a href="#listings">Listings</a></li>
+        </ul>
+      </nav>
+
+      <!-- Toolbar Row -->
+      <div class="toolbar-row">
+        <div class="filter-section">
+          <input
+            type="text"
+            placeholder="Filter tokens by name or ID"
+            class="filter-input"
+          />
+        </div>
+      </div>
+
+      <!-- Tab Contents - Mỗi tab content là một div riêng biệt -->
+      <div id="collected" class="tab-content">
+        <div id="collected-nfts" class="nft-grid"></div>
+        <div id="loading-nfts" style="display: none">
+          <div class="loading-spinner-container"></div>
+          <p class="loading-text">Loading your NFTs</p>
+          <p class="loading-subtext">
+            Please wait while we fetch your collection
+          </p>
+        </div>
+        <div id="no-nfts" style="display: none">
+          <div class="no-nfts-icon">
+            <i class="bi bi-collection"></i>
+          </div>
+          <h3 class="no-nfts-title">No NFTs Found</h3>
+          <p class="no-nfts-description">
+            You haven't collected any NFTs yet. Start exploring the marketplace
+            to find unique digital assets.
+          </p>
+        </div>
+      </div>
+
+      <div id="listings" class="tab-content nft-grid" style="display: none">
+        <div class="no-items">
+          <h3>No active listings</h3>
+          <p>Your NFTs for sale will appear here</p>
+        </div>
+      </div>
+
+      <div id="sent-offers" class="tab-content" style="display: none">
+        <div class="no-items">
+          <h3>No sent offers</h3>
+          <p>Offers you've made will appear here</p>
+        </div>
+      </div>
+
+      <div id="received-offers" class="tab-content" style="display: none">
+        <div class="no-items">
+          <h3>No received offers</h3>
+          <p>Offers on your NFTs will appear here</p>
+        </div>
+      </div>
+
+      <div id="rewards" class="tab-content" style="display: none">
+        <div class="no-items">
+          <h3>No rewards yet</h3>
+          <p>Complete activities to earn rewards</p>
+        </div>
+      </div>
+    <!-- ================== FOOTER ================== -->
+    <footer class="py-5" style="background-color: #f9f9f9; color: #333">
+      <!-- Sử dụng .container thay vì .container-fluid để footer hẹp hơn, cân đối hơn -->
+      <div class="container">
+        <div class="row align-items-start">
+          <!-- Cột Trái: Stay in the loop -->
+          <div class="col-md-4 text-start mb-4 mb-md-0">
+            <h5 style="font-weight: 600">Stay in the loop</h5>
+            <p style="color: #555; font-size: 0.95rem">
+              Join our mailing list to stay in the loop with our newest
+              features.
+            </p>
+
+            <!-- Form ô email + nút Sign up, nhỏ gọn để tránh xuống dòng -->
+            <div class="d-flex flex-nowrap footer-subscribe">
+              <input
+                class="form-control me-2"
+                type="email"
+                placeholder="Your email address"
+              />
+              <button class="btn btn-primary">Sign up</button>
+            </div>
+          </div>
+
+          <!-- Cột Giữa: Join the community -->
+          <div class="col-md-4 text-center mb-4 mb-md-0">
+            <h5 style="font-weight: 600">Join the community</h5>
+            <div class="mt-3 d-flex justify-content-center gap-3">
+              <!-- Thay đường dẫn icon thật của bạn -->
+              <a href="#">
+                <img
+                  src="../assets/zalo.svg"
+                  alt="Zalo"
+                  style="width: 32px; height: 32px"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="../assets/discord.svg"
+                  alt="Discord"
+                  style="width: 32px; height: 32px"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="../assets/telegram.svg"
+                  alt="Telegram"
+                  style="width: 32px; height: 32px"
+                />
+              </a>
+              <a href="#">
+                <img
+                  src="../assets/email.svg"
+                  alt="Email"
+                  style="width: 32px; height: 32px"
+                />
+              </a>
+            </div>
+          </div>
+
+          <!-- Cột Phải: Need help? -->
+          <div class="col-md-4 text-end">
+            <h5 style="font-weight: 600">Need help?</h5>
+            <p style="color: #555; font-size: 0.95rem">
+              Have questions or need assistance? Our support team is here for
+              you.
+            </p>
+            <button
+              class="btn-contact"
+              style="border-radius: 5px; white-space: nowrap"
+            >
+              Contact Support
+            </button>
+          </div>
+        </div>
+
+        <!-- Dòng bản quyền phía dưới -->
+        <div
+          class="text-center pt-4 mt-4"
+          style="border-top: 1px solid #eaeaea"
+        >
+          <small class="text-muted">
+            &copy; 2025 Your Company. All rights reserved.
+          </small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal backdrop -->
+    <div id="modal-backdrop" class="modal-backdrop"></div>
+
+    <!-- NFT Info Modal -->
+    <div id="nft-info-modal" class="nft-info-modal">
+      <div id="nft-info-content" class="nft-info-content">
+        <!-- Content will be dynamically added here -->
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"
+      defer
+    ></script>
+    <script src="../scripts/profile_manager.js" defer></script>
+    <script src="../scripts/wallet_manager.js" defer></script>
+    <script src="../scripts/account.js" defer></script>
+    <script src="../scripts/notification_manager.js" defer></script>
+    <script src="../scripts/cart_manager.js" defer></script>
+    <script src="../scripts/search.js" defer></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <!-- Chatbot Popup -->
+    <div id="chat-button">
+      <i class="fas fa-comments"></i>
+    </div>
+
+    <!-- Chat Container -->
+    <div id="chat-container" class="hidden">
+      <div id="chat-header">
+        <div class="header-content">
+          <div class="header-info">
+            <div class="avatar">
+              <i class="fas fa-robot"></i>
+            </div>
+            <div class="header-text">
+              <h3>Chat Assistant</h3>
+              <span class="status">Online</span>
+            </div>
+          </div>
+          <button id="close-chat">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-body">
+        <div class="message bot">
+          <div class="message-content">
+            <p>Xin chào! Tôi có thể giúp gì cho bạn?</p>
+          </div>
+          <span class="timestamp">12:00</span>
+        </div>
+
+        <div class="quick-replies">
+          <button class="quick-reply" onclick="redirectToPage('index.html')">
+            <i class="fas fa-list"></i> Index
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('create.html')">
+            <i class="fas fa-plus-circle"></i> Create
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('nfts.html')">
+            <i class="fas fa-image"></i> NFTs
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('users.html')">
+            <i class="fas fa-user"></i> Users
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('account.html')">
+            <i class="fas fa-shopping-cart"></i> Sell
+          </button>
+          <button
+            class="quick-reply"
+            onclick="redirectToPage('marketplace.html')"
+          >
+            <i class="fas fa-store"></i> Marketplaces
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('account.html')">
+            <i class="fas fa-user-circle"></i> Profile
+          </button>
+          <button class="quick-reply" onclick="redirectToPage('tos.html')">
+            <i class="fas fa-file-alt"></i> TOS
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-footer">
+        <div class="input-container">
+          <input
+            type="text"
+            id="user-input"
+            placeholder="Nhập tin nhắn của bạn..."
+          />
+          <button id="send-btn">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chatbot Script -->
+    <script src="../scripts/chatbot.js"></script>
+  </body>
+</html>

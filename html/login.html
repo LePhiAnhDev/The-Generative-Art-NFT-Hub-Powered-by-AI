@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="../css/login_styles.css" />
+        <title>NFTWorld - Login to Your Account</title>
+        <link rel="icon" type="image/png" href="../assets/Logo.png" />
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    </head>
+
+    <body class="bg-gray-100 flex items-center justify-center min-h-screen">
+        <div class="bg-white rounded-lg shadow-lg p-6 max-w-md w-full">
+            <!-- Nút đóng ở góc (tạm thời chưa có chức năng) -->
+            <div class="flex justify-end">
+                <button class="text-gray-400 hover:text-gray-600">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Logo + Tiêu đề -->
+            <div class="flex flex-col items-center">
+                <img alt="NFTMall logo" class="logo" src="../assets/Logo.png" width="100" height="100" />
+                <h1 class="text-2xl font-semibold mb-6">
+                    Connect to NFTMall
+                </h1>
+
+                <!-- Các nút ví -->
+                <div class="w-full">
+                    <!-- Leap Wallet -->
+                    <button class="leap-wallet-btn flex items-center justify-between w-full p-4 mb-2 border rounded-lg hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <img alt="Leap Wallet logo" class="w-7 h-7 mr-3" src="../assets/leap_logo.svg" width="24" height="24" />
+                            <span class="text-lg">Leap Wallet</span>
+                        </div>
+                    </button>
+
+                    <!-- Keplr Wallet -->
+                    <button class="keplr-wallet-btn flex items-center justify-between w-full p-4 mb-2 border rounded-lg hover:bg-gray-100">
+                        <div class="flex items-center">
+                            <img alt="Keplr Wallet logo" class="w-7 h-7 mr-3" src="../assets/Keplr_logo.svg" width="24" height="24" />
+                            <span class="text-lg">Keplr Wallet</span>
+                        </div>
+                    </button>
+                </div>
+
+                <!-- Nút MetaMask (đã gán ID để bắt sự kiện) -->
+                <button id="connectMetaMaskBtn" class="flex items-center justify-between w-full p-4 mb-2 border rounded-lg hover:bg-gray-100">
+                    <div class="flex items-center">
+                        <img alt="MetaMask logo" class="w-7 h-7 mr-3" src="../assets/MetaMask_logo.svg" width="24" height="24" />
+                        <span class="text-lg">MetaMask</span>
+                    </div>
+                </button>
+
+                <!-- Nút xem thêm -->
+                <button class="text-blue-500 mt-4">
+                    More wallet options
+                </button>
+
+                <!-- Hoặc đăng nhập bằng email -->
+                <div class="flex items-center my-4 w-full">
+                    <hr class="flex-grow border-t border-gray-300" />
+                    <span class="mx-4 text-gray-500">OR</span>
+                    <hr class="flex-grow border-t border-gray-300" />
+                </div>
+
+                <div class="w-full flex items-center border rounded-lg p-2">
+                    <input class="flex-grow p-2 outline-none" type="email" placeholder="Continue with email" />
+                    <button class="text-white bg-blue-500 p-2 rounded-lg">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Ghi chú nhỏ -->
+                <p class="text-gray-500 text-sm mt-4 text-center">
+                    If you haven't logged in using your email before, you will create a new wallet using this email.
+                </p>
+            </div>
+        </div>
+        <!-- Chỉ giữ lại các scripts cần thiết cho wallet connection -->
+        <script src="../scripts/wallet.js" defer></script>
+        <script src="../scripts/wallet_manager.js" defer></script>
+    </body>
+</html>
